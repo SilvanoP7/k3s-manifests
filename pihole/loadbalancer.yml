@@ -5,6 +5,7 @@ metadata:
   namespace: pi-hole
   labels:
     name: pi-hole-service
+    app.kubernetes.io/instance: pihole
 spec:
   selector:
     app: pi-hole
