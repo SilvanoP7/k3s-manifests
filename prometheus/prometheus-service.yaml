@@ -10,7 +10,7 @@ metadata:
 spec:
   selector: 
     app: prometheus-server
-  type: ClusterIp
+  type: ClusterIP
   ports:
     - name: http
       port: 9090
