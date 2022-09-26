@@ -23,19 +23,18 @@ spec:
           image: grafana/grafana
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 3000
-              name: http-grafana
-              protocol: TCP
-        volumeMounts:
-        - mountPath: /var/lib/grafana
-          name: grafana-storage
-          readOnly: false
-        - mountPath: /etc/grafana/provisioning/datasources
-          name: grafana-datasources
-          readOnly: false
+          - containerPort: 3000
+            name: http-grafana
+          volumeMounts:
+          - mountPath: /var/lib/grafana
+            name: grafana-storage
+            readOnly: false
+          - mountPath: /etc/grafana/provisioning/datasources
+            name: grafana-datasources
+            readOnly: false
       volumes:
       - emptyDir: {}
         name: grafana-storage
       - name: grafana-datasources
         secret:
-          secretName: grafana-datasource
+          secretName: grafana-datasources

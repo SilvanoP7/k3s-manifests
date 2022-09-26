@@ -14,6 +14,6 @@ spec:
         path: "/"
         backend:
           service:
-            name: grafana
+            name: grafana-svc
             port:
               number: 80
