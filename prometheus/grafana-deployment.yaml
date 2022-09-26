@@ -2,30 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app.kubernetes.io/component: grafana
-    app.kubernetes.io/name: grafana
-    app.kubernetes.io/part-of: kube-prometheus
-    app.kubernetes.io/version: 9.1.5
+    app: grafana
   name: grafana
   namespace: monitoring
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/component: grafana
-      app.kubernetes.io/name: grafana
-      app.kubernetes.io/part-of: kube-prometheus
+      app: grafana
   template:
     metadata:
-      annotations:
-        checksum/grafana-config: 288e3c7168b73a0bfac5f1c9587f22da
-        checksum/grafana-dashboardproviders: 2e39d335c51389a5339ca53e3fe0458e
-        checksum/grafana-datasources: 3076d616d8c68be7ec1cdb33125b1952
       labels:
-        app.kubernetes.io/component: grafana
-        app.kubernetes.io/name: grafana
-        app.kubernetes.io/part-of: kube-prometheus
-        app.kubernetes.io/version: 9.1.5
+        app: grafana
     spec:
       automountServiceAccountToken: false
       containers:
@@ -39,13 +27,6 @@ spec:
           httpGet:
             path: /api/health
             port: http
-        resources:
-          limits:
-            cpu: 200m
-            memory: 200Mi
-          requests:
-            cpu: 100m
-            memory: 100Mi
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
