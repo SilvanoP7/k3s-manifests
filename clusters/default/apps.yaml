@@ -1,0 +1,13 @@
+kind: Kustomization
+metadata:
+  name: apps
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./apps/environments/default
+  prune: true
+  wait: true
+  timeout: 5m0s
