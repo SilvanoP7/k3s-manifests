@@ -24,3 +24,7 @@ spec:
         env:
         - name: TZ
           value: 'Europe/London'
+        - name: WEBPASSWORD
+          value: Pizzaman7
+        - name: DNSMASQ_LISTENING
+          value: all
