@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
     - ../../collection/pihole
     - ../../collection/prometheus
+    - ../../collection/kube-state-metrics
