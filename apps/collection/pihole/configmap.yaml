@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: custom-list
+data:
+  custom.list: |
+    192.168.178.200 prometheus.sac23.io
+    192.168.178.200 grafana.sac23.io
