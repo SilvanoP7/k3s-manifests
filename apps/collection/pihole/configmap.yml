@@ -6,6 +6,6 @@ metadata:
   labels:
     app: pi-hole
 data:
-  custom.list: |
-    192.168.178.200 prometheus.sac23.io
-    192.168.178.200 grafana.sac23.io
+  03-pihole-custom-dns.conf: |
+    address=/prometheus.sac23.io/192.168.178.200
+    address=/grafana.sac23.io/192.168.178.200

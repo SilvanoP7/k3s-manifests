@@ -28,15 +28,15 @@ spec:
           value: Pizzaman7
         - name: DNSMASQ_LISTENING
           value: all
-#        volumeMounts:
-#        - name: custom-list
-#          mountPath: /etc/pihole/
-#      volumes:
-#      - name: custom-list
-#        configMap:
-#          name: custom-list
-#          items:
-#          - key: custom.list
-#            path: custom.list
+        volumeMounts:
+        - name: custom-list
+          mountPath: /etc/dnsmasq.d/
+      volumes:
+      - name: custom-list
+        configMap:
+          name: custom-list
+          items:
+          - key: 03-pihole-custom-dns.conf
+            path: 03-pihole-custom-dns.conf
 
   
