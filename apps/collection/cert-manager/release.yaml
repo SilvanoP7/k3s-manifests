@@ -15,9 +15,11 @@ spec:
         namespace: cert-manager
       interval: 1m
   values:
-    installCRDs=true
-    prometheus.enabled=true
+    installCRDs: true
+    prometheus:
+      enabled: true
     extraArgs:
       dns01-recursive-nameservers:
-        - 192.168.178.200:53
+        - --dns01-recursive-nameservers-only
+        - --dns01-recursive-nameservers=192.168.178.200:53
 
