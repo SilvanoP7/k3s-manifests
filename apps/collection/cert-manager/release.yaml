@@ -19,7 +19,6 @@ spec:
     prometheus:
       enabled: true
     extraArgs:
-      dns01-recursive-nameservers:
-        - --dns01-recursive-nameservers-only
-        - --dns01-recursive-nameservers=192.168.178.200:53
+      - --dns01-recursive-nameservers-only
+      - --dns01-recursive-nameservers=192.168.178.200:53
 
