@@ -17,3 +17,7 @@ spec:
   values:
     installCRDs=true
     prometheus.enabled=true
+    extraArgs:
+      dns01-recursive-nameservers:
+        - 192.168.178.200:53
+
