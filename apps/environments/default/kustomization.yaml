@@ -4,3 +4,4 @@ resources:
     - ../../collection/pihole
     - ../../collection/prometheus
     - ../../collection/kube-state-metrics
+    - ../../collection/cert-manager
