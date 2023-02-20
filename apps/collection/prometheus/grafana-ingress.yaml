@@ -5,6 +5,7 @@ metadata:
   namespace: monitoring
   annotations:
     kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   rules:
   - host: "grafana.sac23.io"
@@ -17,3 +18,7 @@ spec:
             name: grafana-svc
             port:
               number: 80
+  tls: # < placing a host in the TLS config will determine what ends up in the cert's subjectAltNames
+  - hosts:
+    - grafana.sac23.io
+    secretName: ingress-grafana-cert

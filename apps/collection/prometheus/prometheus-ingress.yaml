@@ -8,6 +8,7 @@ metadata:
   namespace: monitoring
   annotations:
     kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   rules:
   # Use the host you used in your kubernetes Ingress Configurations
@@ -21,3 +22,7 @@ spec:
             name: prometheus-service
             port:
               number: 80
+  tls: # < placing a host in the TLS config will determine what ends up in the cert's subjectAltNames
+  - hosts:
+    - prometheus.sac23.io
+    secretName: ingress-prometheus-cert
