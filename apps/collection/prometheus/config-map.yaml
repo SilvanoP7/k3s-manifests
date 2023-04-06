@@ -106,6 +106,10 @@ data:
         static_configs:
           - targets: ['kube-state-metrics.kube-system.svc.cluster.local:8080']
 
+      - job_name: 'passbolt-exporter'
+        static_configs:
+          - targets: ['http://109.228.49.55:9273']
+
       - job_name: 'kubernetes-cadvisor'
 
         scheme: https
