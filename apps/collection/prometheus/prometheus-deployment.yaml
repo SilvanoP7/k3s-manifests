@@ -1,3 +1,18 @@
+---
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: prometheus-pvc
+  namespace: monitoring
+spec:
+  accessModes:
+    - ReadWriteMany  # Was ReadWriteOnce before!
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: nfs  # This is new!
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -35,4 +50,5 @@ spec:
             name: prometheus-server-conf
   
         - name: prometheus-storage-volume
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: prometheus-pvc

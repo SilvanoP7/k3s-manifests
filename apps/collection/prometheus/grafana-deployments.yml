@@ -1,3 +1,17 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: grafana-files-pvc
+  namespace: monitoring
+spec:
+  accessModes:
+    - ReadWriteMany  
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: nfs
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -27,14 +41,15 @@ spec:
             name: http-grafana
           volumeMounts:
           - mountPath: /var/lib/grafana
-            name: grafana-storage
+            name: grafana-files
             readOnly: false
           - mountPath: /etc/grafana/provisioning/datasources
             name: grafana-datasources
             readOnly: false
       volumes:
-      - emptyDir: {}
-        name: grafana-storage
+      - name: grafana-files
+        persistentVolumeClaim: 
+        claimName: grafana-storage
       - name: grafana-datasources
         secret:
           secretName: grafana-datasources
