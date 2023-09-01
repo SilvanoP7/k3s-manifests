@@ -12,7 +12,7 @@ metadata:
 spec:
   rules:
   # Use the host you used in your kubernetes Ingress Configurations
-  - host: bifrost.sac23.io
+  - host: prometheus.sac23.io
     http:
       paths:
       - pathType: Prefix
@@ -24,5 +24,5 @@ spec:
               number: 80
   tls: # < placing a host in the TLS config will determine what ends up in the cert's subjectAltNames
   - hosts:
-    - bifrost.sac23.io
-    secretName: ingress-bifrost-cert
+    - prometheus.sac23.io
+    secretName: ingress-prom-cert
