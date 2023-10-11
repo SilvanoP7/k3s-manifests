@@ -9,5 +9,3 @@ data:
   03-pihole-custom-dns.conf: |
     address=/prometheus.sac23.io/192.168.178.200
     address=/grafana.sac23.io/192.168.178.200
-  pihole-FTL.conf: |
-    RATE_LIMIT=0/0
