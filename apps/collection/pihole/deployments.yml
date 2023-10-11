@@ -31,8 +31,8 @@ spec:
         volumeMounts:
         - name: custom-list
           mountPath: /etc/dnsmasq.d/
-          #        - name: pihole-ftl
-          #mountPath: /etc/pihole/
+        - name: pihole-ftl
+          mountPath: /etc/pihole/
       volumes:
       - name: pihole-ftl
         configMap:
@@ -40,6 +40,8 @@ spec:
           items:
           - key: pihole-FTL.conf
             path: pihole-FTL.conf
+          - key: setupVars.conf
+            path: setupVars.conf
       - name: custom-list
         configMap:
           name: custom-list
