@@ -42,6 +42,8 @@ spec:
             path: pihole-FTL.conf
           - key: setupVars.conf
             path: setupVars.conf
+          - key: dns-servers.conf
+            path: dns-servers.conf
       - name: custom-list
         configMap:
           name: custom-list
