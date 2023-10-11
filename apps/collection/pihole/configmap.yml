@@ -9,3 +9,8 @@ data:
   03-pihole-custom-dns.conf: |
     address=/prometheus.sac23.io/192.168.178.200
     address=/grafana.sac23.io/192.168.178.200
+  pihole-FTL.conf: |
+    #; Pi-hole FTL config file
+    #; Comments should start with #; to avoid issues with PHP and bash reading this file
+    PRIVACYLEVEL=0
+    RATE_LIMIT=0/0
