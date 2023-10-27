@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: pi-hole
-        image: pihole/pihole:2023.05.2
+        image: pihole/pihole:2023.10.0
         ports:
         - containerPort: 53
         - containerPort: 80
